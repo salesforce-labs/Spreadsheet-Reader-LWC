@@ -46,7 +46,6 @@ export default class SpreadsheetReader extends LightningElement {
                 this.showToast(TOAST_SUCCESS_VARIANT,TOAST_SUCCESS_TITLE, FILE_UPLOADED_MESSAGE)
             }
         } catch (error) {
-            console.log(error);
             this.showToast(TOAST_ERROR_VARIANT,TOAST_ERROR_TITLE, error.message);
         }
     }
@@ -64,7 +63,6 @@ export default class SpreadsheetReader extends LightningElement {
             this.importedData = sheetData
             this.showImportedDataSummary = true;
             this.showInputFile = false;
-            console.log(JSON.stringify(sheetData));
         };
         reader.readAsArrayBuffer(file);
     }
