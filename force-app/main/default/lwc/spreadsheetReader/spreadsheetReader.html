@@ -1,0 +1,38 @@
+<!--
+  @description       : 
+  @author            : Juan Felipe Muriel
+  @group             : 
+  @last modified on  : 02-04-2025
+  @last modified by  : Juan Felipe Muriel
+-->
+<template>
+    <lightning-card title="LECTOR DE HOJA DE CALCULO" icon-name="custom:custom103">
+        <div class="slds-m-horizontal_medium" >
+            <div if:true='{showInputFile}' class="slds-form-element slds-has-error">
+                <span class="slds-form-element__label" id="file-selector-primary-label-113">Upload the file with the information to be imported.</span>
+                <div class="slds-form-element__control">
+                    <div class="slds-file-selector slds-file-selector_images">
+                        <div class="slds-file-selector__dropzone">
+                            <lightning-input 
+                                type="file" 
+                                name="fileUploader"
+                                accept={acceptedFormats}
+                                onchange={handleUploadFinished}
+                            >
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div if:false='{validFileFormat}' class="slds-form-element__help" id="error-116">Unsupported file format.</div>
+                </div>
+            </div>
+            <div if:true='{showImportedDataSummary}'>
+                <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+                    Imported information.
+                </h2>
+                <div>
+                    <c-data-summary json-data={importedData}></c-data-summary>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
