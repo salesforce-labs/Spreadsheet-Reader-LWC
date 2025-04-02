@@ -26,9 +26,9 @@ Now that you’ve created a Salesforce DX project, what’s next? Here are some 
 
 1. Create a scratch org and provide it with an alias (**SpreadSheetReader** in the command below):
 
-```
-sf org create scratch -d -f config/project-scratch-def.json -a SpreadSheetReader
-```
+    ```
+    sf org create scratch -d -f config/project-scratch-def.json -a SpreadSheetReader
+    ```
 
 1. Push the app to your scratch org:
 
